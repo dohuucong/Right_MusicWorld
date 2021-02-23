@@ -1,0 +1,33 @@
+﻿@{
+    Layout = "_AlbumsCloneLayout";
+}
+@model ProductListViewModel
+
+<h1 style="margin-bottom:50px;">JAZZ Albums</h1>
+@foreach (var a in Model.Songs)
+{
+    <div class="one-music-songs-area mb-70">
+        <div class="container">
+            <div class="row">
+
+                <!-- Single Song Area -->
+                <div class="col-12">
+                    <div class="single-song-area mb-30 d-flex flex-wrap align-items-end">
+                        <div class="song-thumbnail">
+                            <img src="/img/Music/Classical/@a.UrlImage" alt="">
+                        </div>
+                        <div class="song-play-area">
+                            <div class="song-name">
+                                <p>@a.Title - @a.Author</p>
+                            </div>
+                            <audio preload="auto" controls>
+                                <source src="/audio/@a.UrlMp3">
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+}
