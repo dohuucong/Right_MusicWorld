@@ -1,11 +1,13 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MusicWorld.Models;
+using MusicWorld.Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +33,13 @@ namespace MusicWorld
                 opts.UseSqlServer(
                     Configuration["ConnectionStrings:MusicWorlkConnection"]);
             });
+            services.AddIdentity<AppUser, AppRole>()
+            .AddEntityFrameworkStores<MusicDbContext>()
+            .AddDefaultTokenProviders();
             services.AddScoped<IMusicReposity, EFMusicRepository>();
+            services.AddTransient<UserManager<AppUser>, UserManager<AppUser>>();
+            services.AddTransient<SignInManager<AppUser>, SignInManager<AppUser>>();
+            services.AddTransient<RoleManager<AppRole>, RoleManager<AppRole>>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
