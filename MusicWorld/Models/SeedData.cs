@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using MusicWorld.Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,7 +33,6 @@ namespace MusicWorld.Models
                     Place = "Hà Nội",
                     StartingDate = "3/10/2019",
                      UrlImage = "sk1.jpg"
-
                 },
                 new Event
                 {
@@ -42,7 +42,6 @@ namespace MusicWorld.Models
                     Place = "Nha Trang",
                     StartingDate = "3/10/2019",
                      UrlImage = "sk2.jpg"
-
                 },
                 new Event
                 {
@@ -78,7 +77,6 @@ namespace MusicWorld.Models
                     Place = "HN",
                     StartingDate = "3/10/2019",
                     UrlImage = "sk_1.jpg"
-
                 },
                 new Event {
                   Title = "CountDown",
@@ -87,7 +85,6 @@ namespace MusicWorld.Models
                     Place = "Nha Trang",
                     StartingDate = "3/10/2019",
                     UrlImage = "sk_2.jpg"
-
                 },
                 new Event {
                   Title = "Đại Nhạc Hội TP.BANK",
@@ -121,7 +118,6 @@ namespace MusicWorld.Models
                     Place = "Anh",
                     StartingDate = "13/7/2009",
                     UrlImage = "This Is It.jpg"
-
                 },
                 new Event
                 {
@@ -131,7 +127,6 @@ namespace MusicWorld.Models
                     Place = "USA",
                     StartingDate = "5/5/1997",
                     UrlImage = "RimTour.jpg"
-
                 },
                 new Event
                 {
@@ -141,7 +136,6 @@ namespace MusicWorld.Models
                     Place = "Ba Lan",
                     StartingDate = "11/7/2017",
                     UrlImage = "25 Live.jpg"
-
                 },
                 new Event
                 {
@@ -151,7 +145,6 @@ namespace MusicWorld.Models
                     Place = "World",
                     StartingDate = "17/11/2016",
                     UrlImage = "Back Tour.jpg"
-
                 },
                 new Event
                 {
@@ -161,7 +154,6 @@ namespace MusicWorld.Models
                     Place = "World",
                     StartingDate = "12/3/2009",
                     UrlImage = "The Fame Ball Tour.jpg"
-
                 },
                 new Event
                 {
@@ -171,7 +163,6 @@ namespace MusicWorld.Models
                     Place = "VN",
                     StartingDate = "7/11/2020",
                     UrlImage = "Beyond The Future.jpg"
-
                 },
                 new Event
                 {
@@ -181,7 +172,6 @@ namespace MusicWorld.Models
                     Place = "VN",
                     StartingDate = "11/11/2020",
                     UrlImage = "Shopee Show.jpg"
-
                 },
                 new Event
                 {
@@ -191,7 +181,6 @@ namespace MusicWorld.Models
                     Place = "VN",
                     StartingDate = "22/1/2021",
                     UrlImage = "Justatee Nimo.jpg"
-
                 },
                 new Event
                 {
@@ -201,7 +190,6 @@ namespace MusicWorld.Models
                     Place = "VN",
                     StartingDate = "12/1/2020",
                     UrlImage = "Wechoice Đen.jpg"
-
                 },
                 new Event
                 {
@@ -211,7 +199,6 @@ namespace MusicWorld.Models
                     Place = "VN",
                     StartingDate = "1/8/2020",
                     UrlImage = "Elle Show.jpg"
-
                 }
            };
             foreach (Event e in events)
@@ -233,7 +220,6 @@ namespace MusicWorld.Models
                                 Contact = "Michael Jackson.com",
                                 UrlImage = "MichaelJackson.jpg",
                                 EventId = events.Single(e=> e.Title == "This Is It").Id
-
                         },
                         new Artists
                         {
@@ -359,7 +345,6 @@ namespace MusicWorld.Models
                             EventId = events.Single(e => e.Title == "Đại Nhạc Hội REALME").Id
                         },
                         new Artists {
-
                           Name = "Trần Lập",
                             Birthday = "12/12/1974",
                             Gender = "Nam",
@@ -368,7 +353,6 @@ namespace MusicWorld.Models
                             EventId = events.Single(e => e.Title == "Đại Nhạc Hội TP.BANK").Id
                         },
                         new Artists {
-
                           Name = "Ngọt",
                             Birthday = "1/1/2013",
                             Gender = "Nam",
@@ -377,7 +361,6 @@ namespace MusicWorld.Models
                             EventId = events.Single(e => e.Title == "Đại Nhạc Hội TP.BANK").Id
                         },
                         new Artists {
-
                           Name = "Mr.siro",
                             Birthday = " 18/11/1982",
                             Gender = "Nam",
@@ -386,7 +369,6 @@ namespace MusicWorld.Models
                             EventId = events.Single(e => e.Title == "Music Awards").Id
                         },
                         new Artists {
-
                           Name = "Trung Quân",
                             Birthday = "20/1/1989",
                             Gender = "Nam",
@@ -417,7 +399,6 @@ namespace MusicWorld.Models
                                 Gender = "Nam",
                                 UrlImage = "yoma.jpg",
                                  EventId = events.Single(e=> e.Title == "Kỉ Niệm 151 năm Sinh LEHAR").Id
-
                         },
                         new Artists
                         {
@@ -450,7 +431,6 @@ namespace MusicWorld.Models
                                 Gender = "Nữ",
                                 UrlImage = "larrocha.jpg",
                                 EventId = events.Single(e=> e.Title == "Kỉ Niệm 190 năm sinh MASSENET").Id
-
                         }
                 };
 
@@ -544,7 +524,6 @@ namespace MusicWorld.Models
                     ReleaseDate = "1/1/2020",
                     UrlImage = "album_1.jpg"
                 }
-                 
             };
             foreach (Album a in albums)
             {
@@ -557,7 +536,6 @@ namespace MusicWorld.Models
             }
             var songs = new Song[]
             {
-               
                  new Song
                 {
                         Title = "OK",
@@ -676,7 +654,6 @@ namespace MusicWorld.Models
                     Category = "Ballad",
                     ArtistsId = artists.Single(a => a.Name == "Mr.siro").Id,
                     AlbumsId = albums.Single(a => a.Title == "Top HITS của năm").Id
-
                 },
                 new Song {
                   Title = "Lắng Nghe Nước Mắt",
@@ -686,7 +663,6 @@ namespace MusicWorld.Models
                     Category = "Ballad",
                     ArtistsId = artists.Single(a => a.Name == "Mr.siro").Id,
                     AlbumsId = albums.Single(a => a.Title == "Những bản nhạc việt hiện đại").Id
-
                 },
                 new Song {
                   Title = "Chiều nay không có mưa bay",
@@ -769,10 +745,7 @@ namespace MusicWorld.Models
                         Category = "Classical",
                         ArtistsId = artists.Single(a => a.Name == "YO YO MA").Id,
                         AlbumsId = albums.Single(a => a.Title == "Những Bản nhạc cổ điển hay").Id
-
                 }
-              
-
             };
             foreach (Song s in songs)
             {
@@ -780,7 +753,5 @@ namespace MusicWorld.Models
             }
             context.SaveChanges();
         }
-        
     }
-   
 }
